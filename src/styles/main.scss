@@ -1,0 +1,15 @@
+@use 'tokens' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: $font-base;
+  color: $color-text;
+  background-color: $color-bg;
+}
