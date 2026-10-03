@@ -1,0 +1,15 @@
+@use '@/styles/tokens' as *;
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  gap: $space-m;
+}
+
+.stats__item {
+  margin: 0;
+}
+
+.stats__value {
+  font-weight: 700;
+}

@@ -1,8 +1,21 @@
 $color-bg: #f4f1ea;
 $color-text: #1f2933;
+$color-card-back: #2bb3c0;
+$color-card-front: #ffffff;
+
 $font-base:
   system-ui,
   -apple-system,
   'Segoe UI',
   Roboto,
   sans-serif;
+
+$space-xs: 4px;
+$space-s: 8px;
+$space-m: 16px;
+$space-l: 24px;
+
+$radius-s: 8px;
+$radius-m: 12px;
+
+$board-max-width: 480px;

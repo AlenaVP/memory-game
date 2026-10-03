@@ -1,0 +1,14 @@
+@use '@/styles/tokens' as *;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app__main {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: $space-l $space-m;
+}

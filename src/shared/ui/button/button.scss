@@ -1,0 +1,9 @@
+@use '@/styles/tokens' as *;
+
+.button {
+  padding: $space-s $space-m;
+  border: 0;
+  border-radius: $radius-s;
+  font: inherit;
+  cursor: pointer;
+}

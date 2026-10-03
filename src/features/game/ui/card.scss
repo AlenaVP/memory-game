@@ -1,0 +1,42 @@
+@use '@/styles/tokens' as *;
+
+.card {
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: $radius-m;
+  background: none;
+  cursor: pointer;
+}
+
+.card__inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.card__face {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: $radius-m;
+  font-size: 2.5rem;
+}
+
+.card__face--back {
+  background-color: $color-card-back;
+}
+
+.card__face--front {
+  display: none;
+  background-color: $color-card-front;
+}
+
+.card.is-open .card__face--back {
+  display: none;
+}
+
+.card.is-open .card__face--front {
+  display: grid;
+}
