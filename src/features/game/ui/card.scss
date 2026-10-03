@@ -40,3 +40,12 @@
 .card.is-open .card__face--front {
   display: grid;
 }
+
+.card.is-open,
+.card.is-matched {
+  cursor: default;
+}
+
+.card.is-matched .card__face--front {
+  opacity: 0.6;
+}

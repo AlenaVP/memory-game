@@ -24,3 +24,15 @@ export function createCard(card) {
     ],
   );
 }
+
+/**
+ * Syncs the card element with its state.
+ *
+ * @param {HTMLButtonElement} element
+ * @param {import('../model/game.state.js').CardState} card
+ */
+export function updateCard(element, card) {
+  element.classList.toggle('is-open', card.isOpen);
+  element.classList.toggle('is-matched', card.isMatched);
+  element.setAttribute('aria-label', card.isOpen ? `Card: ${card.pairId}` : 'Closed card');
+}
