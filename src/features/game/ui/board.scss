@@ -1,0 +1,8 @@
+@use '@/styles/tokens' as *;
+
+.board {
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-s;
+}

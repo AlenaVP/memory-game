@@ -1,0 +1,12 @@
+@use 'tokens' as *;
+
+@mixin mobile {
+  @media (width <= $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  outline: 3px solid $color-focus;
+  outline-offset: 2px;
+}

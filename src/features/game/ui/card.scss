@@ -1,0 +1,78 @@
+@use '@/styles/tokens' as *;
+@use '@/styles/mixins' as *;
+
+.card {
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: $radius-m;
+  background: none;
+  cursor: pointer;
+  perspective: 600px;
+  transition: transform $duration-fast ease;
+
+  @media (hover: hover) {
+    &:not(.is-open):hover {
+      transform: translateY(-3px);
+    }
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  &.is-open {
+    cursor: default;
+  }
+}
+
+.card__inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform $duration-flip ease;
+
+  .card.is-open & {
+    transform: rotateY(180deg);
+  }
+}
+
+.card__face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: $radius-m;
+  box-shadow: $shadow-card;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card__face--back {
+  background:
+    repeating-linear-gradient(135deg, rgb(0 0 0 / 7%) 0 1px, transparent 1px 4px),
+    linear-gradient(
+      135deg,
+      $color-coral 0 16.66%,
+      $color-yellow 16.66% 33.33%,
+      $color-slate 33.33% 50%,
+      $color-brick 50% 66.66%,
+      $color-teal 66.66% 83.33%,
+      $color-pink 83.33% 100%
+    );
+}
+
+.card__face--front {
+  font-size: 13cqi;
+  background-color: $color-surface;
+  transform: rotateY(180deg);
+
+  .card.is-matched & {
+    background-color: $color-matched;
+    box-shadow:
+      inset 0 0 0 3px $color-teal,
+      $shadow-card;
+  }
+}

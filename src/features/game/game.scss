@@ -1,0 +1,8 @@
+@use '@/styles/tokens' as *;
+
+.game {
+  display: flex;
+  flex-direction: column;
+  gap: $space-m;
+  width: min(100%, $board-max-width);
+}
