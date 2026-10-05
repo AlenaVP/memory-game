@@ -1,0 +1,36 @@
+@use '@/styles/tokens' as *;
+
+html:has(.modal:modal) {
+  overflow: hidden;
+}
+
+.modal {
+  width: min(420px, 90vw);
+  padding: 0;
+  border: 0;
+  border-radius: $radius-m;
+  color: $color-text;
+  background-color: $color-card-front;
+}
+
+.modal::backdrop {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.modal__panel {
+  display: flex;
+  flex-direction: column;
+  gap: $space-m;
+  padding: $space-l;
+}
+
+.modal__title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: $space-s;
+}
