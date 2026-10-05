@@ -8,7 +8,10 @@ import './header.scss';
  */
 export function createHeader({ onNewGame, onLeaderboard }) {
   return el('header', { className: 'header' }, [
-    el('h1', { className: 'header__title', text: 'Memory Game' }),
+    el('h1', { className: 'header__title' }, [
+      el('span', { className: 'header__logo', text: '🃏', attrs: { 'aria-hidden': true } }),
+      'Memory Game',
+    ]),
     el('div', { className: 'header__actions' }, [
       createButton({ text: 'New game', onClick: onNewGame }),
       createButton({ text: 'Leaderboard', onClick: onLeaderboard }),
