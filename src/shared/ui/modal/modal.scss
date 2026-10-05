@@ -10,11 +10,20 @@ html:has(.modal:modal) {
   border: 0;
   border-radius: $radius-m;
   color: $color-text;
-  background-color: $color-card-front;
+  background-color: $color-surface;
+  box-shadow: $shadow-modal;
+}
+
+.modal[open] {
+  animation: modal-in $duration-modal ease-out;
 }
 
 .modal::backdrop {
-  background-color: rgb(0 0 0 / 50%);
+  background-color: rgb(31 41 51 / 55%);
+}
+
+.modal[open]::backdrop {
+  animation: backdrop-in $duration-modal ease-out;
 }
 
 .modal__panel {
@@ -33,4 +42,17 @@ html:has(.modal:modal) {
   display: flex;
   justify-content: flex-end;
   gap: $space-s;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
 }

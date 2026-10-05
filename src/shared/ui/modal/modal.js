@@ -15,7 +15,7 @@ export function createModal({ title }) {
 
   const body = el('div', { className: 'modal__body' });
   const actions = el('div', { className: 'modal__actions' });
-  const closeButton = createButton({ text: 'Close', onClick: close });
+  const closeButton = createButton({ text: 'Close', onClick: close, className: 'button--secondary' });
 
   const dialog = el(
     'dialog',

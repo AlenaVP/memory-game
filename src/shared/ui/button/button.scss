@@ -1,9 +1,40 @@
 @use '@/styles/tokens' as *;
+@use '@/styles/mixins' as *;
 
 .button {
   padding: $space-s $space-m;
   border: 0;
-  border-radius: $radius-s;
+  border-radius: $radius-pill;
   font: inherit;
+  font-weight: 600;
+  color: $color-surface;
+  background-color: $color-primary;
   cursor: pointer;
+  transition: background-color $duration-fast ease;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color-primary-hover;
+    }
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.button--secondary {
+  color: $color-primary;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px $color-primary;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color-matched;
+    }
+  }
 }

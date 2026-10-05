@@ -2,14 +2,21 @@
 
 .stats {
   display: flex;
-  justify-content: space-between;
-  gap: $space-m;
+  justify-content: center;
+  gap: $space-s;
 }
 
 .stats__item {
   margin: 0;
+  padding: $space-xs $space-m;
+  border-radius: $radius-pill;
+  color: $color-text-muted;
+  background-color: $color-surface;
+  box-shadow: $shadow-card;
 }
 
 .stats__value {
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: $color-text;
 }

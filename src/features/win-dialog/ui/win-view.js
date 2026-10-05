@@ -1,3 +1,4 @@
+import './win-view.scss';
 import { el } from '@/shared/lib/dom.js';
 
 /**

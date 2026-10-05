@@ -1,4 +1,5 @@
 @use '@/styles/tokens' as *;
+@use '@/styles/mixins' as *;
 
 .header {
   display: flex;
@@ -7,11 +8,23 @@
   justify-content: space-between;
   gap: $space-m;
   padding: $space-m $space-l;
+  border-top: 6px solid;
+  border-image: linear-gradient(90deg, $color-coral, $color-yellow, $color-slate, $color-brick, $color-teal, $color-pink) 1;
+  background-color: $color-surface;
+  box-shadow: 0 1px 0 rgb(0 0 0 / 8%);
+
+  @include mobile {
+    padding: $space-s $space-m;
+  }
 }
 
 .header__title {
   margin: 0;
   font-size: 1.5rem;
+
+  @include mobile {
+    font-size: 1.25rem;
+  }
 }
 
 .header__actions {
